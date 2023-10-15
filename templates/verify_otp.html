@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify OTP</title>
+</head>
+<body>
+    <h1>Enter OTP</h1>
+    <form method="POST" action="/verify_otp">
+        <input type="hidden" name="phone" value="{{ phone }}">
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp" required><br><br>
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <input type="submit" value="Verify OTP">
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Incident Reporting Form</title>
+    <!-- Your existing styles here -->
+</head>
+<body>
+    <div class="container">
+        <!-- Your form content here -->
+
+        <button id="extinguish-fire">Extinguish Fire</button>
+        <button id="medical-emergency">Medical Emergency</button>
+        <button id="social-violation">Social Violation</button>
+
+        <!-- Your JavaScript code here -->
+        <script>
+            const extinguishFireButton = document.getElementById('extinguish-fire');
+            const medicalEmergencyButton = document.getElementById('medical-emergency');
+            const socialViolationButton = document.getElementById('social-violation');
+
+            extinguishFireButton.addEventListener('click', function() {
+                sendCommand('Extinguish Fire');
+            });
+
+            medicalEmergencyButton.addEventListener('click', function() {
+                sendCommand('Medical Emergency');
+            });
+
+            socialViolationButton.addEventListener('click', function() {
+                sendCommand('Social Violation');
+            });
+
+            function sendCommand(command) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '/send_command', true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            alert('Command sent successfully');
+                        } else {
+                            alert('Failed to send command');
+                        }
+                    }
+                };
+                xhr.send(JSON.stringify({ command: command }));
+            }
+        </script>
+    </div>
+</body>
+</html>

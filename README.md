@@ -16,7 +16,7 @@ The Emergency Response App is a comprehensive solution designed to provide immed
 - **Folium**: Utilized for map visualization, displaying real-time GPS coordinates to users and emergency responders.
 - **Pygame**: Used to create sound and visual alerts for SOS events, enhancing emergency response notifications.
 
-## Setup and Installation 🚀
+## Setup
 1. Clone the repository:
    **git clone "repository-url"**
 3. Install dependencies:
